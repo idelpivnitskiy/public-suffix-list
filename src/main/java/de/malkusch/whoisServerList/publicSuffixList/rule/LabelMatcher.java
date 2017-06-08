@@ -1,10 +1,10 @@
 package de.malkusch.whoisServerList.publicSuffixList.rule;
 
-import javax.annotation.concurrent.Immutable;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import javax.annotation.concurrent.Immutable;
 
 /**
  * The label matcher.
@@ -44,10 +44,10 @@ final class LabelMatcher {
             return false;
 
         }
-        if (pattern.equals(Rule.WILDCARD)) {
-            return true;
-
-        }
+//        if (pattern.equals(Rule.WILDCARD)) {
+//            return true;
+//
+//        }
         return pattern.equalsIgnoreCase(label);
     }
 

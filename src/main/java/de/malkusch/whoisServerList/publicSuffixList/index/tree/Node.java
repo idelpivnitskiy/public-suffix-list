@@ -1,14 +1,14 @@
 package de.malkusch.whoisServerList.publicSuffixList.index.tree;
 
+import de.malkusch.whoisServerList.publicSuffixList.rule.Rule;
+import de.malkusch.whoisServerList.publicSuffixList.util.DomainUtil;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-
-import de.malkusch.whoisServerList.publicSuffixList.rule.Rule;
-import de.malkusch.whoisServerList.publicSuffixList.util.DomainUtil;
 
 /**
  * Tree Node.
@@ -122,7 +122,8 @@ abstract class Node<T extends Node<T>> {
      * @see Rule#WILDCARD
      */
     T getWildcard() {
-        return children.get(Rule.WILDCARD);
+        return null;
+//        return children.get(Rule.WILDCARD);
     }
 
     /**

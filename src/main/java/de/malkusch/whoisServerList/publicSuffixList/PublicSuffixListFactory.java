@@ -1,5 +1,11 @@
 package de.malkusch.whoisServerList.publicSuffixList;
 
+import de.malkusch.whoisServerList.publicSuffixList.index.Index;
+import de.malkusch.whoisServerList.publicSuffixList.index.IndexFactory;
+import de.malkusch.whoisServerList.publicSuffixList.parser.Parser;
+import de.malkusch.whoisServerList.publicSuffixList.rule.Rule;
+
+import javax.annotation.concurrent.Immutable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -7,13 +13,6 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Properties;
-
-import javax.annotation.concurrent.Immutable;
-
-import de.malkusch.whoisServerList.publicSuffixList.index.Index;
-import de.malkusch.whoisServerList.publicSuffixList.index.IndexFactory;
-import de.malkusch.whoisServerList.publicSuffixList.parser.Parser;
-import de.malkusch.whoisServerList.publicSuffixList.rule.Rule;
 
 /**
  * The factory for {@code PublicSuffixList}.
@@ -124,7 +123,7 @@ public final class PublicSuffixListFactory {
 
     /**
      * Builds a PublicSuffixList.
-     * 
+     *
      * @param list
      *            The list.
      * @return a public suffix list
@@ -142,7 +141,7 @@ public final class PublicSuffixListFactory {
 
     /**
      * Downloads the public suffix list.
-     * 
+     *
      * @return a public suffix list
      * @throws IOException
      *             If the list can't be downloaded.
@@ -168,7 +167,7 @@ public final class PublicSuffixListFactory {
 
     /**
      * Builds a PublicSuffixList.
-     * 
+     *
      * @param list
      *            The list.
      * @return a public suffix list
@@ -186,7 +185,7 @@ public final class PublicSuffixListFactory {
 
     /**
      * Loads the index factory.
-     * 
+     *
      * @param indexFactoryClassName
      *            the class name of the index factory.
      * @return the index factory
@@ -218,7 +217,7 @@ public final class PublicSuffixListFactory {
 
     /**
      * Builds a PublicSuffixList.
-     * 
+     *
      * @param list
      *            The list.
      * @param url
@@ -238,7 +237,7 @@ public final class PublicSuffixListFactory {
         List<Rule> rules = parser.parse(list, charset);
 
         // add default rule
-        rules.add(Rule.DEFAULT);
+        //rules.add(Rule.DEFAULT);
 
         Index index = indexFactory.build(rules);
 
